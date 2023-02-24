@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-  
+
 @RestController
 @RequestMapping(path = "api/v1/student")
 
@@ -30,19 +30,19 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerNewStudent(@RequestBody Student student){
+    public void registerNewStudent(@RequestBody Student student) {
         studentService.addNewStudent(student);
     }
 
-    @DeleteMapping(path = "{studentId}")
-    public void deleteStudent(@PathVariable("studentId")long studentId){
+    @DeleteMapping (path = "{studentId}")
+    public void deleteStudent(@PathVariable ("studentId")long studentId){
         studentService.deleteStudent(studentId);
     }
 
-    @PutMapping(path = "{studentId}")
+    @PutMapping (path = "{studentId}")
     public void updateStudent(
         @PathVariable("studentId") Long studentId,
-        @RequestParam(required = false) String name,
+        @RequestParam (required = false) String name,
         @RequestParam(required = false) String email){
             studentService.updateStudent(studentId, name, email);
         }

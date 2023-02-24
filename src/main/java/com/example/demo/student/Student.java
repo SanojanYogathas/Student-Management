@@ -21,14 +21,12 @@ public class Student {
         sequenceName = "student_sequence",
         allocationSize = 1       
     )
-    
+
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
         generator = "student_sequence"     
     )
-    
 
-    
     private Long id;
     private String name;
     private String email;
@@ -43,6 +41,12 @@ public class Student {
     public Student(String name, String email, LocalDate dob ) {
         this.name = name;
         this.email = email;
+        this.dob = dob;
+
+    }
+
+    public Student(String name, LocalDate dob ) {
+        this.name = name;
         this.dob = dob;
 
     }
@@ -99,5 +103,5 @@ public class Student {
     public String toString() {
         return "Students [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", age=" + age + "]";
     }
-    
+
 }
