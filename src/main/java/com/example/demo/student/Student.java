@@ -1,7 +1,6 @@
 package com.example.demo.student;
 import java.time.LocalDate;
 import java.time.Period;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,8 +26,6 @@ public class Student {
         strategy = GenerationType.SEQUENCE,
         generator = "student_sequence"     
     )
-
-
 
     private Long id;
     private String name;
